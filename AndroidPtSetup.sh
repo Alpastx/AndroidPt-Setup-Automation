@@ -32,7 +32,7 @@ echo 'export PATH="$HOME/android_sdk/cmdline-tools/latest/bin:$PATH"' >> ~/.zshr
 echo 'export PATH="$HOME/android_sdk/platform-tools:$PATH"' >> ~/.zshrc
 echo 'export PATH="$HOME/android_sdk/emulator:$PATH"' >> ~/.zshrc
 echo 'export ANDROID_HOME=$HOME/android_sdk' >> ~/.zshrc
-echo "alias A10='emulator -avd A10'" >> ~/.zshrc
+echo "alias A10='emulator -avd A10 -writable-system'" >> ~/.zshrc
 echo "alias A14PR='emulator -avd A14PR'" >> ~/.zshrc
 
 # Source .zshrc
@@ -58,3 +58,11 @@ echo -e "[*] Installing some tools like pipx, frida, objection\n"
 yay -S --noconfirm python-pipx
 pipx install frida-tools objection frida apkleaks
 
+echo -e "[*] list of Avds \n"
+
+avdmanager list avd
+
+echo -e "[*] Settings up HWKeys for A10 and A14 \n"
+
+bash HWKeys.sh A10
+Bash HWKeys.sh A14PR
