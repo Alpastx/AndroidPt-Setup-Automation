@@ -53,3 +53,8 @@ avdmanager create avd -n "A14PR" -k "system-images;android-34;google_apis_playst
 ln -sf ~/.config/.android ~/.android
 
 echo "✅ Android SDK setup complete!"
+
+echo -e "[*] Installing some tools like pipx, frida, objection\n"
+yay -S --noconfirm python-pipx
+pipx install frida-tools objection frida apkleaks
+
