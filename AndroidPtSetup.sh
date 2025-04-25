@@ -66,3 +66,6 @@ echo -e "[*] Settings up HWKeys for A10 and A14 \n"
 
 bash HWKeys.sh A10
 Bash HWKeys.sh A14PR
+
+echo -e "[*] Setting up Burp CA cert for A10 and proxy \n"
+bash proxyA10.sh
