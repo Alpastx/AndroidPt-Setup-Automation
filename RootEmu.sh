@@ -6,7 +6,7 @@ else
     echo "burp.der not found"
     exit 1
 fi
-
+echo -e "[*] Settingup A10 for proxy \n"
 if command -v openssl >/dev/null 2>&1; then
     echo "OpenSSL is installed."
 else
@@ -50,3 +50,20 @@ adb shell chmod 644 /system/etc/security/cacerts/"$hash.0"
 
 echo -e "Rebooting to apply changes...\n"
 adb reboot
+
+sleep 20
+
+pkill -f "emulator.*-avd"
+
+echo -e "[*] Rooting A14 systemimg \n"
+
+echo -e "Running A14 Emulator...\n"
+
+emulator -avd A14PR > /dev/null 2>&1 &
+
+sleep 30
+
+echo -e "Rooting A14 Emulator...\n"
+
+$HOME/android_sdk/rootAVD/rootAVD.sh $HOME/android_sdk/system-images/android-34/google_apis_playstore/x86_64/ramdisk.img
+

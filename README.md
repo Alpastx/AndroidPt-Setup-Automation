@@ -13,6 +13,8 @@ The setup involves the following Bash scripts:
 - `cmdlinetools.sh` – Downloads the latest `cmdline-tools`
 - `platformtools.sh` – Downloads the latest `platform-tools`
 - `Magisk.sh` – Fetches the latest Magisk release APK
+- `RootEmu.sh` – Setsup proxy for A10 And roots A14PR
+- `HwKeys.sh` - Enables Hw keys for emulators
 
 ---
 
@@ -75,5 +77,6 @@ This script orchestrates the setup process:
     ```bash
     ln -sf ~/.config/.android ~/.android
     ```
+
 
 ---

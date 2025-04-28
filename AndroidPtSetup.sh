@@ -1,4 +1,8 @@
 #!/bin/bash
+
+# set -e
+# set -u
+
 echo -e "[*] Fetching cmdline-tools & platform-tools\n"
 
 bash cmdlinetools.sh
@@ -7,7 +11,7 @@ bash platformtools.sh
 echo -e "[*] Unzipping cmdline-tools & platform-tools\n"
 
 # Unzip SDK tools
-unzip commandlinetools* && unzip platform-tools* 
+unzip commandlinetools* && unzip platform-tools*
 
 echo -e "[*] Organising Dirstruct\n"
 
@@ -68,4 +72,4 @@ bash HWKeys.sh A10
 Bash HWKeys.sh A14PR
 
 echo -e "[*] Setting up Burp CA cert for A10 and proxy \n"
-bash proxyA10.sh
+bash RootEmu.sh
